@@ -259,6 +259,7 @@ class _MyWidgetState extends State<MyWidget> {
                 MaterialPageRoute(builder: (context) => Homepage()),
               );
             } else {
+              await user.reload();
               setState(() => isloding = false);
               if (widget.UserMode == null && widget.fromSignUp == false) {
                 await user.sendEmailVerification();

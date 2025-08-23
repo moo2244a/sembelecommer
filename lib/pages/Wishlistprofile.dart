@@ -72,7 +72,7 @@ class Wishlistprofile extends StatelessWidget {
                 ),
 
                 Text(
-                  "Cart",
+                  "Wishlist",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                 ),
 

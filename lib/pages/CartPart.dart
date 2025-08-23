@@ -206,7 +206,7 @@ class ProductCart extends StatelessWidget {
   Widget build(BuildContext context) {
     double finalPrice =
         order.product!.offer != null
-            ? order.product!.price * (100 - order.product!.offer!)
+            ? order.product!.price * (100 - order.product!.offer!) / 100
             : order.product!.price;
 
     return Container(

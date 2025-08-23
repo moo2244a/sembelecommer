@@ -255,7 +255,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                             "Size",
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
-                          Row(
+                          Wrap(
                             children:
                                 widget.shop_by_categoriesAllProdect.size.map((
                                   size,
@@ -274,7 +274,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                                         0,
                                         0,
                                         10,
-                                        0,
+                                        10,
                                       ),
                                       decoration: BoxDecoration(
                                         color:
