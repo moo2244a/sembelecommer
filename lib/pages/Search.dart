@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:doctor/model/model%20product.dart';
-import 'package:doctor/pages/ProductDetails.dart';
+import 'package:doctor/pages/product_details/ProductDetails.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';

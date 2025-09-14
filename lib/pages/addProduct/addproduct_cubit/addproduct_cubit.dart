@@ -4,7 +4,7 @@ import 'dart:io';
 import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:doctor/model/model%20product.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+
 import 'package:flutter/material.dart';
 
 import 'package:http/http.dart' as http;
@@ -72,7 +72,7 @@ class AddproductCubit extends Cubit<AddproductState> {
   List<String> data = [];
   Future<void> fetchAllProductNames() async {
     final firestore = FirebaseFirestore.instance;
-    final userEmail = FirebaseAuth.instance.currentUser!.email;
+
     final List<String> categories = [
       'Hoodies',
       'Shorts',

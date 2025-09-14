@@ -6,7 +6,7 @@ class UserModel {
   final String pass;
 
   final String address;
-  final List orders; // لو حابب تخزن طلباته داخل نفس الموديل
+  final List orders;
 
   UserModel({
     required this.id,

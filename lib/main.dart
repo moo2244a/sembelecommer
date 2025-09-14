@@ -1,6 +1,6 @@
 import 'package:doctor/pages/homepage.dart';
 import 'package:doctor/join/singin.dart';
-import 'package:doctor/profile_cubit/profile_cubit.dart';
+import 'package:doctor/pages/profile/profile_cubit/profile_cubit.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';

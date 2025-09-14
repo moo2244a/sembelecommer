@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:doctor/pages/Search.dart';
 import 'package:doctor/model/model%20product.dart';
-import 'package:doctor/pages/addProduct.dart';
+import 'package:doctor/pages/addProduct/addProduct.dart';
 
 import 'package:doctor/widgets/top_scren.dart';
 import 'package:doctor/widgets/widget_prodect.dart';
@@ -27,7 +27,7 @@ class _Tellusaboutyourself extends State<Homepage> {
   void initState() {
     super.initState();
     productsFuture = fetchProducts(PageStateCA);
-    _searchPageKey.getphoto(); //دي صورة الفئات
+    _searchPageKey.getphoto();
   }
 
   Future<List<Product>> fetchProducts(String name) async {

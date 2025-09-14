@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:doctor/pages/CartPart.dart';
-import 'package:doctor/pages/profile.dart';
+import 'package:doctor/pages/profile/CartPart.dart';
+import 'package:doctor/pages/profile/profile.dart';
 
-import 'package:doctor/profile_cubit/profile_cubit.dart';
+import 'package:doctor/pages/profile/profile_cubit/profile_cubit.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

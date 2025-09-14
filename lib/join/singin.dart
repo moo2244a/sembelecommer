@@ -246,37 +246,53 @@ class _MyWidgetState extends State<MyWidget> {
           isloding = true;
         } else if (state is LoginSuccessful) {
           User? user = FirebaseAuth.instance.currentUser;
+
           if (user != null) {
+            print("user != null1");
+
             await user.reload();
-            if (user.emailVerified) {
-              setState(() => isloding = false);
-              FirebaseFirestore.instance.collection("user").doc(Email.text).set(
-                {"Email": Email.text, "emailVerified": true},
-                SetOptions(merge: true),
-              );
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => Homepage()),
-              );
-            } else {
-              await user.reload();
-              setState(() => isloding = false);
-              if (widget.UserMode == null && widget.fromSignUp == false) {
-                await user.sendEmailVerification();
-                widget.fromSignUp = true;
+            user = FirebaseAuth.instance.currentUser;
+
+            if (user != null) {
+              if (user.emailVerified) {
+                print("user.emailVerified");
+                setState(() => isloding = false);
+
+                await FirebaseFirestore.instance
+                    .collection("user")
+                    .doc(user.email)
+                    .set({
+                      "Email": user.email,
+                      "emailVerified": true,
+                    }, SetOptions(merge: true));
+
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => Homepage()),
+                );
+              } else {
+                setState(() => isloding = false);
+
+                // إرسال التحقق لو أول مرة
+                if (widget.UserMode == null && widget.fromSignUp == false) {
+                  await user.sendEmailVerification();
+                  widget.fromSignUp = true;
+                }
+
+                print("!user.emailVerified");
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder:
+                        (context) => EmailToReset(
+                          senttext:
+                              "We've sent you a verification email.\nPlease check your inbox and verify your email.",
+                          bottonReturn: () => Navigator.pop(context),
+                          bottonextReturn: "Return to Login",
+                        ),
+                  ),
+                );
               }
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder:
-                      (context) => EmailToReset(
-                        senttext:
-                            "We've sent you a verification email.\nPlease check your inbox and verify your email.",
-                        bottonReturn: () => Navigator.pop(context),
-                        bottonextReturn: "Return to Login",
-                      ),
-                ),
-              );
             }
           } else {
             setState(() => isloding = false);
@@ -299,7 +315,7 @@ class _MyWidgetState extends State<MyWidget> {
             desc: state.errorMessage,
             btnOkOnPress: () {},
           ).show();
-        } else if (state is LoginInitial) {}
+        }
       },
       builder: (context, state) {
         return Column(

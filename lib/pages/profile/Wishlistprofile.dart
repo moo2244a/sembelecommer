@@ -1,6 +1,6 @@
 import 'package:doctor/model/model%20product.dart';
-import 'package:doctor/pages/ProductDetails.dart';
-import 'package:doctor/pages/addProduct.dart';
+import 'package:doctor/pages/product_details/ProductDetails.dart';
+import 'package:doctor/pages/addProduct/addProduct.dart';
 import 'package:doctor/widgets/widget_prodect.dart';
 import 'package:flutter/material.dart';
 

@@ -1,13 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:doctor/model/modleprofile.dart';
-import 'package:doctor/pages/AddressProfile.dart';
-import 'package:doctor/pages/CartPart.dart';
+import 'package:doctor/pages/profile/AddressProfile.dart';
+import 'package:doctor/pages/profile/CartPart.dart';
 
-import 'package:doctor/pages/Wishlistprofile.dart';
-import 'package:doctor/pages/bottonSheet.dart';
+import 'package:doctor/pages/profile/Wishlistprofile.dart';
+import 'package:doctor/widgets/bottonSheet.dart';
 import 'package:doctor/join/singin.dart';
-import 'package:doctor/profile_cubit/profile_cubit.dart';
+import 'package:doctor/pages/profile/profile_cubit/profile_cubit.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:flutter/material.dart';

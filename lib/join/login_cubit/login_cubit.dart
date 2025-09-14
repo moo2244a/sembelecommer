@@ -9,9 +9,9 @@ class LoginCubit extends Cubit<LoginState> {
   void login(String emailAddress, String password) async {
     emit(LoginLoding());
     try {
-      FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: emailAddress,
-        password: password,
+      final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailAddress.trim(),
+        password: password.trim(),
       );
 
       if (isClosed) return;

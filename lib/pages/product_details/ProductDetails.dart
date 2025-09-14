@@ -1,7 +1,7 @@
 import 'package:doctor/model/model%20product.dart';
 import 'package:doctor/model/modelorder.dart';
 
-import 'package:doctor/pages/cubit/product_details_cubit.dart';
+import 'package:doctor/pages/product_details/produt_details_cubit/product_details_cubit.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

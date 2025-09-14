@@ -1,4 +1,4 @@
-import 'package:doctor/addproduct_cubit/addproduct_cubit.dart';
+import 'package:doctor/pages/addProduct/addproduct_cubit/addproduct_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -52,11 +52,10 @@ class _AddProductPageState extends State<AddProductPage> {
 
     'Accessories': ['Men', 'Women', 'Kids'],
   };
-  bool hasDiscount = false; // هل المنتج له خصم؟
+  bool hasDiscount = false;
   final TextEditingController productDiscountController =
       TextEditingController();
 
-  @override
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -254,7 +253,6 @@ class _AddProductPageState extends State<AddProductPage> {
                     ),
                   SizedBox(height: 15),
 
-                  // Product Description
                   _buildInputField(
                     controller: productDescriptionController,
                     label: "Product Description",
@@ -329,7 +327,6 @@ class _AddProductPageState extends State<AddProductPage> {
                     spacing: 10,
                     runSpacing: 10,
                     children: [
-                      // عرض الألوان اللي تم اختيارها
                       ...BlocProvider.of<AddproductCubit>(
                         context,
                       ).seleColor.toList().map((color) {
